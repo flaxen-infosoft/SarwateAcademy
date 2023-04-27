@@ -1,0 +1,71 @@
+package com.flaxeninfosoft.sarwateAcademy.adapters;
+
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.flaxeninfosoft.sarwateAcademy.R;
+import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleNotesBinding;
+import com.flaxeninfosoft.sarwateAcademy.models.StudyMaterial;
+
+import java.util.List;
+
+public class PurchasedCourseNotesAdapter extends RecyclerView.Adapter<PurchasedCourseNotesAdapter.ViewHolder>{
+
+    private List<StudyMaterial> studyMaterialList;
+    private PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener;
+
+    public PurchasedCourseNotesAdapter(List<StudyMaterial> studyMaterialList, PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener) {
+        this.studyMaterialList = studyMaterialList;
+        this.notesCardClickListener = notesCardClickListener;
+    }
+    @NonNull
+    @Override
+    public PurchasedCourseNotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutSingleNotesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_notes, parent, false);
+        return new ViewHolder(binding, notesCardClickListener);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PurchasedCourseNotesAdapter.ViewHolder holder, int position) {
+        holder.setData(studyMaterialList.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        if (studyMaterialList == null) {
+            return 0;
+        } else {
+            return studyMaterialList.size();
+        }
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        private LayoutSingleNotesBinding binding;
+        private PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener;
+
+        public ViewHolder(LayoutSingleNotesBinding binding, PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener) {
+            super(binding.getRoot());
+            this.binding = binding;
+            this.notesCardClickListener = notesCardClickListener;
+
+        }
+
+        public void setData(StudyMaterial studyMaterial) {
+            binding.setStudyMaterial(studyMaterial);
+            binding.layoutRightImageView.setImageResource(R.drawable.right_arrow);
+            binding.getRoot().setOnClickListener(view -> {
+                notesCardClickListener.onClickNotes(studyMaterial);
+            });
+
+        }
+    }
+
+    public interface NotesCardClickListener{
+        void onClickNotes(StudyMaterial studyMaterial);
+    }
+}

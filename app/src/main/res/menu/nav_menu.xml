@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<group>
+<!--    <item android:id="@+id/nav_mydownalod"-->
+<!--        android:title="My Download"-->
+<!--        android:icon="@drawable/download_icon" />-->
+
+        <item android:id="@+id/nav_my_course"
+            android:title="My Course"
+            android:icon="@drawable/free_studymaterial_icon" />
+
+    <item android:id="@+id/nav_share"
+        android:title="Share"
+        android:icon="@drawable/share_icon1" />
+
+    <item android:id="@+id/nav_about_us"
+        android:title="About Us"
+        android:icon="@drawable/about_us_icon" />
+
+    <item android:id="@+id/nav_contact_us"
+        android:title="Contact Us"
+        android:icon="@drawable/helpline_icon" />
+
+    <item android:id="@+id/nav_terms_and_condition"
+        android:title="Terms And Condition"
+        android:icon="@drawable/terms_icon" />
+
+</group>
+
+    <item android:title="Logout">
+        <menu >
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_icon"
+            android:iconTint="#EA0202"
+            android:title="Logout"/>
+        </menu>
+    </item>
+
+
+</menu>

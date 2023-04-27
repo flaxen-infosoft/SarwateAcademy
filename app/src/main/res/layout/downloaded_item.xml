@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Name 2023"
+                android:padding="3dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#343434"
+                android:layout_marginStart="10dp"
+                android:drawableStart="@drawable/test_series_icon"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center_vertical"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/download_icon"
+                android:layout_gravity="end|center_vertical"
+               android:padding="10dp"
+                android:layout_margin="10dp"/>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+    </LinearLayout>
+</layout>

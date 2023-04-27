@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teacher_main_graph"
+    app:startDestination="@id/teacherHomeFragment">
+
+    <fragment
+        android:id="@+id/teacherHomeFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_teacher_home">
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_teacherAllStudentsFragment"
+            app:destination="@id/teacherAllStudentsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_teacherAllNotesFragment"
+            app:destination="@id/teacherAllNotesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_teacherAllLiveSessionsFragment"
+            app:destination="@id/teacherAllLiveSessionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_teacherProfileFragment"
+            app:destination="@id/teacherProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_termsAndConditionsFragment2"
+            app:destination="@id/termsAndConditionsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_aboutUsFragment2"
+            app:destination="@id/aboutUsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_contactUsFragment2"
+            app:destination="@id/contactUsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_teacherHomeFragment_to_myCourseTeacherFragment"
+            app:destination="@id/myCourseTeacherFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherAllStudentsFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherAllStudentsFragment"
+        android:label="All Students"
+        tools:layout="@layout/fragment_teacher_all_students">
+        <action
+            android:id="@+id/action_teacherAllStudentsFragment_to_teacherStudentProfileFragment"
+            app:destination="@id/teacherStudentProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherStudentProfileFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherStudentProfileFragment"
+        android:label="Student Profile"
+        tools:layout="@layout/fragment_teacher_student_profile" />
+
+    <fragment
+        android:id="@+id/teacherAllNotesFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherAllNotesFragment"
+        android:label="All Notes Fragment"
+        tools:layout="@layout/fragment_teacher_all_notes">
+        <action
+            android:id="@+id/action_teacherAllNotesFragment_to_teacherNoteOverviewFragment"
+            app:destination="@id/teacherNoteOverviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherNoteOverviewFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherNoteOverviewFragment"
+        android:label="Note Overview"
+        tools:layout="@layout/fragment_teacher_note_overview" />
+
+    <fragment
+        android:id="@+id/teacherAddNoteFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherAddNoteFragment"
+        android:label="Add New Note"
+        tools:layout="@layout/fragment_teacher_add_note" />
+
+    <fragment
+        android:id="@+id/teacherProfileFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_teacher_profile" />
+
+    <fragment
+        android:id="@+id/teacherAllLiveSessionsFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherAllCourseFragment"
+        android:label="All Live Sessions"
+        tools:layout="@layout/fragment_teacher_all_courses" />
+
+    <fragment
+        android:id="@+id/teacherAddLiveSessionFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.TeacherAddVideosFragment"
+        android:label="Add Live Session"
+        tools:layout="@layout/fragment_teacher_add_videos" />
+    <fragment
+        android:id="@+id/aboutUsFragment2"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.AboutUsFragment"
+        android:label="AboutUsFragment" />
+    <fragment
+        android:id="@+id/termsAndConditionsFragment2"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.TermsAndConditionsFragment"
+        android:label="TermsAndConditionsFragment" />
+    <fragment
+        android:id="@+id/contactUsFragment2"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.ContactUsFragment"
+        android:label="ContactUsFragment" />
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.AddCourseFragment"
+        android:label="AddCourseFragment" />
+    <fragment
+        android:id="@+id/myCourseTeacherFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.MyCourseFragment"
+        android:label="MyCourseTeacherFragment" >
+        <action
+            android:id="@+id/action_myCourseTeacherFragment_to_singleMyCourseHomeFragment"
+            app:destination="@id/singleMyCourseHomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/singleMyCourseHomeFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.SingleMyCourseHomeFragment"
+        android:label="SingleMyCourseHomeFragment">
+        <action
+            android:id="@+id/action_singleMyCourseHomeFragment_to_editMyCourseDescriptionFragment"
+            app:destination="@id/editMyCourseDescriptionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleMyCourseHomeFragment_to_teacherAddLiveSessionFragment"
+            app:destination="@id/teacherAddLiveSessionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleMyCourseHomeFragment_to_teacherAddNoteFragment"
+            app:destination="@id/teacherAddNoteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleMyCourseHomeFragment_to_videoDetailsFragment"
+            app:destination="@id/videoDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleMyCourseHomeFragment_to_studyMaterialDetailsFragment"
+            app:destination="@id/studyMaterialDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/editMyCourseDescriptionFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.EditMyCourseDescriptionFragment"
+        android:label="fragment_edit_my_course_description"
+        tools:layout="@layout/fragment_edit_my_course_description" />
+    <fragment
+        android:id="@+id/videoDetailsFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.VideoDetailsFragment"
+        android:label="fragment_video_details"
+        tools:layout="@layout/fragment_video_details" >
+        <action
+            android:id="@+id/action_videoDetailsFragment_to_updateVideoFragment2"
+            app:destination="@id/updateVideoFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/studyMaterialDetailsFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.StudyMaterialDetailsFragment"
+        android:label="fragment_study_material_details"
+        tools:layout="@layout/fragment_study_material_details" >
+        <action
+            android:id="@+id/action_studyMaterialDetailsFragment_to_updateStudyMaterialFragment2"
+            app:destination="@id/updateStudyMaterialFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/updateStudyMaterialFragment2"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.UpdateStudyMaterialFragment"
+        android:label="fragment_update_study_material"
+        tools:layout="@layout/fragment_update_study_material" />
+    <fragment
+        android:id="@+id/updateVideoFragment2"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.UpdateVideoFragment"
+        android:label="fragment_update_video"
+        tools:layout="@layout/fragment_update_video" />
+
+
+</navigation>
