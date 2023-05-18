@@ -76,6 +76,9 @@ public class UserHomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_home, container, false);
 
+        binding.userHomeQuizSeries.setOnClickListener(this::allquiz);
+        binding.userHomeMyQuiz.setOnClickListener(this::myquiz);
+
         binding.userHomeLiveBatchesView.setOnClickListener(this::navigateToBatches);
         binding.userHomeStudyMaterial.setOnClickListener(this::navigateToStudyMaterial);
         binding.userHomeDownloadsView.setOnClickListener(this::navigateToDownloads);
@@ -100,6 +103,14 @@ public class UserHomeFragment extends Fragment {
         headerText.setText(user.getName());
 
         return binding.getRoot();
+    }
+
+    private void myquiz(View view) {
+        Navigation.findNavController(view).navigate(R.id.myQuizFragment);
+    }
+
+    private void allquiz(View view) {
+        Navigation.findNavController(view).navigate(R.id.allQuizFragment);
     }
 
     private void setImagesOnSlider() {

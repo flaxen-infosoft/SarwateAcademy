@@ -22,9 +22,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.adapters.MyCourseRecyclerAdapter;
-import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
-import com.flaxeninfosoft.sarwateAcademy.api.Constants;
+import com.flaxeninfosoft.sarwateAcademy.adapters.MyQuizRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyCourseBinding;
+import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyQuizBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
 import com.google.gson.Gson;
@@ -40,16 +40,15 @@ import java.util.List;
 import io.paperdb.Paper;
 
 
-public class MyCourseFragment extends Fragment {
+public class MyQuizFragment extends Fragment {
 
 
-    public MyCourseFragment() {
+
+    public MyQuizFragment() {
         // Required empty public constructor
     }
-
-
-    FragmentMyCourseBinding binding;
-    MyCourseRecyclerAdapter adapter;
+    FragmentMyQuizBinding binding;
+    MyQuizRecyclerAdapter adapter;
     List<Course> courseList;
     RequestQueue requestQueue;
     Gson gson;
@@ -62,9 +61,9 @@ public class MyCourseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_course, container, false);
+       binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_quiz, container, false);
 
-        binding.myCourseRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.myQuizRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.backImageView.setOnClickListener(this::onClickBack);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setTitle("Loading");
@@ -74,14 +73,14 @@ public class MyCourseFragment extends Fragment {
         gson = new Gson();
         courseList = new ArrayList<>();
         myCourses();
-        adapter = new MyCourseRecyclerAdapter(courseList, this::onClickMyCourse);
+        adapter = new MyQuizRecyclerAdapter(courseList, this::onClickMyCourse);
         if (courseList.isEmpty()) {
-            binding.noMyCourseFound.setVisibility(View.VISIBLE);
-            binding.myCourseRecycler.setVisibility(View.GONE);
+            binding.noMyQuizFound.setVisibility(View.VISIBLE);
+            binding.myQuizRecycler.setVisibility(View.GONE);
         } else {
-            binding.myCourseRecycler.setAdapter(adapter);
-            binding.noMyCourseFound.setVisibility(View.GONE);
-            binding.myCourseRecycler.setVisibility(View.VISIBLE);
+            binding.myQuizRecycler.setAdapter(adapter);
+            binding.myQuizRecycler.setVisibility(View.GONE);
+            binding.myQuizRecycler.setVisibility(View.VISIBLE);
         }
 
         return binding.getRoot();
@@ -89,7 +88,7 @@ public class MyCourseFragment extends Fragment {
 
     private void onClickMyCourse(Course course) {
         Paper.book().write("My_Current_Course",course);
-        Navigation.findNavController(binding.getRoot()).navigate(R.id.action_myCourseFragment_to_myCoursePurchasedHomeFragment);
+        Navigation.findNavController(binding.getRoot()).navigate(R.id.quizStartFragment);
     }
 
     private void onClickBack(View view) {
@@ -124,13 +123,13 @@ public class MyCourseFragment extends Fragment {
                         }
 
                         if (courseList.size() == 0) {
-                            binding.noMyCourseFound.setVisibility(View.VISIBLE);
-                            binding.myCourseRecycler.setVisibility(View.GONE);
+                            binding.noMyQuizFound.setVisibility(View.VISIBLE);
+                            binding.myQuizRecycler.setVisibility(View.GONE);
                         } else {
-                            binding.myCourseRecycler.setAdapter(adapter);
+                            binding.myQuizRecycler.setAdapter(adapter);
                             adapter.notifyDataSetChanged();
-                            binding.noMyCourseFound.setVisibility(View.GONE);
-                            binding.myCourseRecycler.setVisibility(View.VISIBLE);
+                            binding.noMyQuizFound.setVisibility(View.GONE);
+                            binding.myQuizRecycler.setVisibility(View.VISIBLE);
                         }
                         Log.i(TAG, "List size: " + courseList.size());
                     } else {
@@ -144,13 +143,13 @@ public class MyCourseFragment extends Fragment {
             progressDialog.dismiss();
             Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
             if (courseList.size() == 0) {
-                binding.noMyCourseFound.setVisibility(View.VISIBLE);
-                binding.myCourseRecycler.setVisibility(View.GONE);
+                binding.noMyQuizFound.setVisibility(View.VISIBLE);
+                binding.myQuizRecycler.setVisibility(View.GONE);
             } else {
-                binding.myCourseRecycler.setAdapter(adapter);
+                binding.myQuizRecycler.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                binding.noMyCourseFound.setVisibility(View.GONE);
-                binding.myCourseRecycler.setVisibility(View.VISIBLE);
+                binding.noMyQuizFound.setVisibility(View.GONE);
+                binding.myQuizRecycler.setVisibility(View.VISIBLE);
             }
 
         });
@@ -159,5 +158,4 @@ public class MyCourseFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonArrayRequest);
     }
-
 }

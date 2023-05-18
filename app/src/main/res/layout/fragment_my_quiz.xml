@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+
+</data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.userFragments.MyQuizFragment">
+
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/purple_700"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="5dp"
+            android:src="@drawable/back_arrow_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="My Quiz"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/no_my_quiz_found"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/curve_corner_edittext_background"
+        android:backgroundTint="#439E9E9E"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:layout_below="@id/topbar">
+
+        <TextView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/item_not_availabe_icon"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Quiz found !"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have not purchased any quiz yet."
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp" />
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_quiz_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:layout_below="@id/topbar" />
+
+
+
+
+
+</RelativeLayout>
+</layout>

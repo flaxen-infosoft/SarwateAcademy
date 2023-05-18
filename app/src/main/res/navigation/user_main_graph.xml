@@ -66,6 +66,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_userHomeFragment_to_myQuizFragment"
+            app:destination="@id/myQuizFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_allQuizFragment"
+            app:destination="@id/allQuizFragment" />
     </fragment>
 
     <fragment
@@ -172,4 +178,31 @@
         android:id="@+id/notesFragment"
         android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.NotesFragment"
         android:label="NotesFragment" />
+    <fragment
+        android:id="@+id/myQuizFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.MyQuizFragment"
+        android:label="fragment_my_quiz"
+        tools:layout="@layout/fragment_my_quiz" >
+        <action
+            android:id="@+id/action_myQuizFragment_to_quizStartFragment"
+            app:destination="@id/quizStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allQuizFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.AllQuizFragment"
+        android:label="fragment_all_quiz"
+        tools:layout="@layout/fragment_all_quiz" >
+        <action
+            android:id="@+id/action_allQuizFragment_to_quizDescriptionFragment"
+            app:destination="@id/quizDescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizDescriptionFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.QuizDescriptionFragment"
+        android:label="QuizDescriptionFragment" />
+    <fragment
+        android:id="@+id/quizStartFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.QuizStartFragment"
+        android:label="fragment_quiz_start"
+        tools:layout="@layout/fragment_quiz_start" />
 </navigation>

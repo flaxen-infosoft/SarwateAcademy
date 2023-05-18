@@ -31,4 +31,9 @@ public class ApiEndpoints {
     public static final String GET_ALL_CATEGORY = "User/getAllCategory.php";//ok
 
 
+    public static final String GET_ALL_QUIZ_BY_CATEGORY = "User/GetAllQuizBycategoryId.php";
+
+    public static final String GET_ALL_QUIZ_CATEGORY = "User/GetAllquizcategory.php";
+
+
 }
