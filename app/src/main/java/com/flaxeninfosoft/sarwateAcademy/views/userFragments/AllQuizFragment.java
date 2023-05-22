@@ -22,13 +22,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.adapters.CourseCategoryAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.CourseRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.QuizCategoryAdapter;
 import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentAllQuizBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
-import com.flaxeninfosoft.sarwateAcademy.models.CourseCategory;
 import com.flaxeninfosoft.sarwateAcademy.models.QuizCategory;
 import com.google.gson.Gson;
 

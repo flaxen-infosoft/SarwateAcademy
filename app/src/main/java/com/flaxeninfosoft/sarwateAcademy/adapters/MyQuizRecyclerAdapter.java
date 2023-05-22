@@ -10,23 +10,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleBatchBinding;
+import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleMyquizBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
+import com.flaxeninfosoft.sarwateAcademy.models.MyQuiz;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class MyQuizRecyclerAdapter extends RecyclerView.Adapter<MyQuizRecyclerAdapter.ViewHolder> {
-    private List<Course> quizList;
+    private List<MyQuiz> quizList;
     private MyQuizCardClick myQuizCardClick;
 
-    public MyQuizRecyclerAdapter(List<Course> quizList,MyQuizCardClick myQuizCardClick){
+    public MyQuizRecyclerAdapter(List<MyQuiz> quizList, MyQuizCardClick myQuizCardClick){
         this.quizList = quizList;
         this.myQuizCardClick = myQuizCardClick;
     }
     @NonNull
     @Override
     public MyQuizRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutSingleBatchBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_batch, parent, false);
+        LayoutSingleMyquizBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_myquiz, parent, false);
         return new ViewHolder(binding, myQuizCardClick);
     }
 
@@ -45,22 +47,22 @@ public class MyQuizRecyclerAdapter extends RecyclerView.Adapter<MyQuizRecyclerAd
         return quizList.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private LayoutSingleBatchBinding binding;
+        private LayoutSingleMyquizBinding binding;
         MyQuizCardClick myQuizCardClick;
 
-        public ViewHolder(@NonNull LayoutSingleBatchBinding binding, MyQuizCardClick myQuizCardClick) {
+        public ViewHolder(@NonNull LayoutSingleMyquizBinding binding, MyQuizCardClick myQuizCardClick) {
             super(binding.getRoot());
             this.binding = binding;
             this.myQuizCardClick = myQuizCardClick;
         }
 
-        public void setData(Course course) {
-            binding.setCourse(course);
-            Picasso.get().load("http://103.118.17.202/~mkeducation/MK_API/User/"+course.getImageUrl()).placeholder(R.drawable.sarwate_logo).into(binding.batchImageView);
-            binding.getRoot().setOnClickListener(view ->myQuizCardClick.onCLickCard(course));
+        public void setData(MyQuiz quiz) {
+            binding.setMyquiz(quiz);
+            Picasso.get().load("http://103.118.17.202/~mkeducation/MK_API/User/"+quiz.getBanner()).placeholder(R.drawable.sarwate_logo).into(binding.batchImageView);
+            binding.getRoot().setOnClickListener(view ->myQuizCardClick.onCLickCard(quiz));
         }
     }
     public interface MyQuizCardClick {
-        void onCLickCard(Course course);
+        void onCLickCard(MyQuiz quiz);
     }
 }

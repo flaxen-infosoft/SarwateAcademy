@@ -186,6 +186,9 @@
         <action
             android:id="@+id/action_myQuizFragment_to_quizStartFragment"
             app:destination="@id/quizStartFragment" />
+        <action
+            android:id="@+id/action_myQuizFragment_to_startQuizFragment"
+            app:destination="@id/startQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/allQuizFragment"
@@ -199,10 +202,38 @@
     <fragment
         android:id="@+id/quizDescriptionFragment"
         android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.QuizDescriptionFragment"
-        android:label="QuizDescriptionFragment" />
+        android:label="QuizDescriptionFragment">
+        <action
+            android:id="@+id/action_quizDescriptionFragment_to_buyQuizFragment"
+            app:destination="@id/buyQuizFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/buyQuizFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.BuyQuizFragment"
+        android:label="BuyQuizFragment" >
+        <action
+            android:id="@+id/action_buyQuizFragment_to_choosePaymentFragment"
+            app:destination="@id/choosePaymentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
     <fragment
         android:id="@+id/quizStartFragment"
         android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.QuizStartFragment"
         android:label="fragment_quiz_start"
         tools:layout="@layout/fragment_quiz_start" />
+    <fragment
+        android:id="@+id/startQuizFragment"
+        android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.StartQuizFragment"
+        android:label="StartQuizFragment" />
 </navigation>

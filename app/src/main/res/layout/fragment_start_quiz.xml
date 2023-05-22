@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.userFragments.StartQuizFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+        <TextView
+            android:id="@+id/tx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="time"
+            android:layout_marginTop="30dp"
+            android:textSize="30sp"
+            android:layout_marginRight="20dp"
+            android:gravity="end"/>
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/DispName"
+            android:textColor="@color/accent_material_light"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/DispName"
+            android:layout_alignStart="@+id/DispName"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/answersgrp"
+            android:clickable="true"
+            android:layout_centerVertical="true">
+            <!--android:layout-->
+            <!--android:checkedButton="@+id/radioButton"-->
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:id="@+id/radioButton"
+                android:checked="false"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:id="@+id/radioButton2"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:id="@+id/radioButton3"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D"
+                android:id="@+id/radioButton4"
+                android:checked="false" />
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next Question"
+            android:id="@+id/button3"
+            android:layout_marginTop="27dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@+id/answersgrp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="#FF5722"
+            android:textColor="#ffffff"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Questions"
+            android:id="@+id/tvque"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="52dp"
+            android:layout_above="@+id/answersgrp"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:textAppearance="@color/abc_background_cache_hint_selector_material_dark"
+            android:id="@+id/textView4"
+            android:text="0"
+            android:textColor="#fff"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="center"
+            android:layout_alignParentRight="true"
+            android:textSize="2dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>
+
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <data>-->
+
+<!--    </data>-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:context=".views.userFragments.StartQuizFragment">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/topbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@color/purple_700"-->
+<!--            android:gravity="center_vertical">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/back_image_view"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@drawable/back_arrow_icon" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="Play Quiz"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tx"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="time"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textSize="30sp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:gravity="end"/>-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/no_my_quiz_found"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/curve_corner_edittext_background"-->
+<!--            android:backgroundTint="#439E9E9E"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="20dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:layout_below="@id/topbar">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:background="@drawable/item_not_availabe_icon"-->
+<!--                android:textStyle="bold" />-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="No Quiz found !"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_marginTop="5dp" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="You have not purchased any quiz yet."-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="14sp"-->
+<!--                android:layout_marginTop="10dp" />-->
+
+
+<!--        </LinearLayout>-->
+
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/my_quiz_recycler"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_below="@id/topbar" />-->
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Next Question"-->
+<!--            android:id="@+id/button3"-->
+<!--            android:layout_marginTop="27dp"-->
+<!--            android:layout_marginHorizontal="20dp"-->
+<!--            android:layout_below="@+id/my_quiz_recycler"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:background="#FF5722"-->
+<!--            android:textColor="#ffffff"/>-->
+
+
+
+
+<!--    </RelativeLayout>-->
+<!--</layout>-->

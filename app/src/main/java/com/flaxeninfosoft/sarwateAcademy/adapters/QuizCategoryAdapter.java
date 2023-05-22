@@ -8,9 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutCourseCategoryBinding;
 import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutQuizCategoryBinding;
-import com.flaxeninfosoft.sarwateAcademy.models.CourseCategory;
 import com.flaxeninfosoft.sarwateAcademy.models.QuizCategory;
 
 import java.util.List;
