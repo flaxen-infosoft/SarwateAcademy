@@ -1,7 +1,6 @@
 package com.flaxeninfosoft.sarwateAcademy.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -27,13 +26,13 @@ public class AllNotesForTeacherRecyclerAdapter extends RecyclerView.Adapter<AllN
 
     @NonNull
     @Override
-    public AllNotesForTeacherRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleNotesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_notes, parent, false);
         return new ViewHolder(binding, notesCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AllNotesForTeacherRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(studyMaterialList.get(position));
     }
 

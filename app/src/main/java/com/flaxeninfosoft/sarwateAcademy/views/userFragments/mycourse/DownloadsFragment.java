@@ -1,6 +1,9 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -8,15 +11,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.adapters.DownloadViewPagerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentDownloadsBinding;
-
-import javax.xml.namespace.NamespaceContext;
 
 public class DownloadsFragment extends Fragment {
     //TODO

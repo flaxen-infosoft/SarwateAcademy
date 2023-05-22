@@ -1,4 +1,4 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.app.ProgressDialog;
 import android.net.Uri;

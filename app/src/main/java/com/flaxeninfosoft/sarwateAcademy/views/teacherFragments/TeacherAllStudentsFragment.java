@@ -25,18 +25,14 @@ import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.adapters.AllStudentsRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
-import com.flaxeninfosoft.sarwateAcademy.api.Constants;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentTeacherAllStudentsBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
-import com.flaxeninfosoft.sarwateAcademy.models.Video;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import io.paperdb.Paper;

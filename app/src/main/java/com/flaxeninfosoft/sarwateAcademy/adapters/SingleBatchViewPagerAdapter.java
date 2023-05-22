@@ -8,10 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.flaxeninfosoft.sarwateAcademy.views.teacherFragments.MyCourseDescriptionFragment;
-import com.flaxeninfosoft.sarwateAcademy.views.userFragments.CourseDescriptionFragment;
-import com.flaxeninfosoft.sarwateAcademy.views.userFragments.CourseNotesFragment;
-import com.flaxeninfosoft.sarwateAcademy.views.userFragments.CourseVideosFragment;
+import com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.CourseDescriptionFragment;
+import com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.CourseNotesFragment;
+import com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.CourseVideosFragment;
 
 public class SingleBatchViewPagerAdapter extends FragmentPagerAdapter {
     Bundle bundle;

@@ -1,19 +1,18 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -21,13 +20,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.adapters.MyCourseRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.MyQuizRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.QuizQuestionsAdapter;
 import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
-import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyCourseBinding;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyQuizBinding;
-import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.MyQuiz;
 import com.flaxeninfosoft.sarwateAcademy.models.QuizQuestions;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
@@ -77,7 +73,6 @@ public class MyQuizFragment extends Fragment {
         gson = new Gson();
         quiz = new ArrayList<>();
         myQuiz();
-        quizQuestionget();
         adapter = new MyQuizRecyclerAdapter(quiz, this::onClickMyQuiz);
         if (quiz.isEmpty()) {
             binding.noMyQuizFound.setVisibility(View.VISIBLE);
@@ -166,67 +161,6 @@ public class MyQuizFragment extends Fragment {
         requestQueue.add(jsonArrayRequest);
     }
 
-    private void quizQuestionget() {
-        User user = Paper.book().read("User");
-        progressDialog.show();
-        String url = ApiEndpoints.BASE_URL+ApiEndpoints.GET_ALL_QUIZ_QUESTIONS;
-        Log.i(TAG, String.valueOf(user.getId()));
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("studentId", user.getId());
-
-        Log.i(TAG, "myCourses " + hashMap);
-
-        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(hashMap), response -> {
-
-            progressDialog.dismiss();
-            try {
-                if (response != null) {
-                    Log.i(TAG, String.valueOf(response));
-                    if (response.getString("success").equals("1")) {
-                        JSONArray jsonArray = response.getJSONArray("data");
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            QuizQuestions course = gson.fromJson(jsonArray.getJSONObject(i).toString(), QuizQuestions.class);
-                            Log.i(TAG, "" + course.getQuizCatid());
-                            quizQuestions.add(course);
-
-                        }
-
-                        if (quizQuestions.size() == 0) {
-                            binding.noMyQuizFound.setVisibility(View.VISIBLE);
-                            binding.myQuizRecycler.setVisibility(View.GONE);
-                        } else {
-                            binding.myQuizRecycler.setAdapter(adapter);
-                            adapter.notifyDataSetChanged();
-                            binding.noMyQuizFound.setVisibility(View.GONE);
-                            binding.myQuizRecycler.setVisibility(View.VISIBLE);
-                        }
-                        Log.i(TAG, "List size: " + quizQuestions.size());
-                    } else {
-                        Toast.makeText(getContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }, error -> {
-            progressDialog.dismiss();
-            Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            if (quizQuestions.size() == 0) {
-                binding.noMyQuizFound.setVisibility(View.VISIBLE);
-                binding.myQuizRecycler.setVisibility(View.GONE);
-            } else {
-                binding.myQuizRecycler.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                binding.noMyQuizFound.setVisibility(View.GONE);
-                binding.myQuizRecycler.setVisibility(View.VISIBLE);
-            }
-
-        });
-        int timeout = 10000; // 10 seconds
-        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(timeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        requestQueue.add(jsonArrayRequest);
-    }
 
 
 }

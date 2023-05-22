@@ -26,15 +26,14 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryAdapte
 
     @NonNull
     @Override
-    public QuizCategoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutQuizCategoryBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_quiz_category, parent, false);
         return new ViewHolder(binding, quizCategoryListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuizCategoryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(quizCategoryList.get(position));
-
     }
 
     @Override
@@ -67,6 +66,6 @@ public class QuizCategoryAdapter extends RecyclerView.Adapter<QuizCategoryAdapte
     }
 
     public interface QuizCategoryListener {
-        void onCLickCard(QuizCategory course);
+        void onCLickCard(QuizCategory quizCategory);
     }
 }

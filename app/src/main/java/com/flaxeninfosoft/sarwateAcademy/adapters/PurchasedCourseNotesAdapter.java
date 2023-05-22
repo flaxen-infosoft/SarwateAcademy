@@ -16,21 +16,21 @@ import java.util.List;
 public class PurchasedCourseNotesAdapter extends RecyclerView.Adapter<PurchasedCourseNotesAdapter.ViewHolder>{
 
     private List<StudyMaterial> studyMaterialList;
-    private PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener;
+    private NotesCardClickListener notesCardClickListener;
 
-    public PurchasedCourseNotesAdapter(List<StudyMaterial> studyMaterialList, PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener) {
+    public PurchasedCourseNotesAdapter(List<StudyMaterial> studyMaterialList, NotesCardClickListener notesCardClickListener) {
         this.studyMaterialList = studyMaterialList;
         this.notesCardClickListener = notesCardClickListener;
     }
     @NonNull
     @Override
-    public PurchasedCourseNotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleNotesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_notes, parent, false);
         return new ViewHolder(binding, notesCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PurchasedCourseNotesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(studyMaterialList.get(position));
     }
 
@@ -46,9 +46,9 @@ public class PurchasedCourseNotesAdapter extends RecyclerView.Adapter<PurchasedC
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private LayoutSingleNotesBinding binding;
-        private PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener;
+        private NotesCardClickListener notesCardClickListener;
 
-        public ViewHolder(LayoutSingleNotesBinding binding, PurchasedCourseNotesAdapter.NotesCardClickListener notesCardClickListener) {
+        public ViewHolder(LayoutSingleNotesBinding binding, NotesCardClickListener notesCardClickListener) {
             super(binding.getRoot());
             this.binding = binding;
             this.notesCardClickListener = notesCardClickListener;

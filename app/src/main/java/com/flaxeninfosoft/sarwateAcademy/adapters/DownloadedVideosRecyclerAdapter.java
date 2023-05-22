@@ -25,13 +25,13 @@ public class DownloadedVideosRecyclerAdapter extends RecyclerView.Adapter<Downlo
 
     @NonNull
     @Override
-    public DownloadedVideosRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleVideoBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_video,parent,false);
         return new ViewHolder(binding,videoCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DownloadedVideosRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(videoList.get(position));
     }
 

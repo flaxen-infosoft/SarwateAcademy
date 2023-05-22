@@ -1,4 +1,4 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -28,7 +28,6 @@ import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentAllCoursesBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.CourseCategory;
-import com.flaxeninfosoft.sarwateAcademy.models.User;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -161,7 +160,6 @@ public class AllCoursesFragment extends Fragment {
                     || course.getPrice().toLowerCase().contains(text.toLowerCase())
 //                    || course.getTeacherName().toLowerCase().contains(text.toLowerCase()
             ) {
-
                 courseList1.add(course);
             }
         }
@@ -255,11 +253,8 @@ public class AllCoursesFragment extends Fragment {
 
 
     }
-
-
     private void getAllCategory() {
 //        courseCategoryList.clear();
-
 
         String url = ApiEndpoints.BASE_URL + ApiEndpoints.GET_ALL_CATEGORY;
         JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
@@ -272,17 +267,14 @@ public class AllCoursesFragment extends Fragment {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             CourseCategory courseCategory = gson.fromJson(jsonArray.getJSONObject(i).toString(), CourseCategory.class);
                             courseCategoryList.add(courseCategory);
-
                         }
                         CourseCategory courseCategory = new CourseCategory();
                         courseCategory.setID(0L);
                         courseCategory.setProduct_category_name("All");
                         courseCategoryList.add(0,courseCategory);
                         courseCategoryAdapter.notifyDataSetChanged();
-
                     } else {
                         Toast.makeText(getContext(), response.getString("Category Not Found."), Toast.LENGTH_SHORT).show();
-
                     }
                 }
             } catch (JSONException e) {
@@ -297,7 +289,5 @@ public class AllCoursesFragment extends Fragment {
         jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(timeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonArrayRequest);
-
-
     }
 }

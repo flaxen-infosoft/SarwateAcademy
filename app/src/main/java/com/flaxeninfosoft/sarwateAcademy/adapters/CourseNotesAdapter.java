@@ -25,13 +25,13 @@ public class CourseNotesAdapter extends RecyclerView.Adapter<CourseNotesAdapter.
 
     @NonNull
     @Override
-    public CourseNotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleNotesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_notes, parent, false);
         return new ViewHolder(binding, notesCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseNotesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(studyMaterialList.get(position));
     }
 

@@ -27,13 +27,13 @@ public class MyCourseRecyclerAdapter extends RecyclerView.Adapter<MyCourseRecycl
 
     @NonNull
     @Override
-    public MyCourseRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleBatchBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_batch, parent, false);
         return new ViewHolder(binding, myCourseCardClick);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyCourseRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(courseList.get(position));
     }
 

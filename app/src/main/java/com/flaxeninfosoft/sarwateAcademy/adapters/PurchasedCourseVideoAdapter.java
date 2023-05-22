@@ -26,13 +26,13 @@ public class PurchasedCourseVideoAdapter extends RecyclerView.Adapter<PurchasedC
 
     @NonNull
     @Override
-    public PurchasedCourseVideoAdapter.VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleVideoBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_video, parent, false);
         return new VideoHolder(binding, videoCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PurchasedCourseVideoAdapter.VideoHolder holder, int position) {
+    public void onBindViewHolder(@NonNull VideoHolder holder, int position) {
         holder.setData(videoList.get(position));
     }
 

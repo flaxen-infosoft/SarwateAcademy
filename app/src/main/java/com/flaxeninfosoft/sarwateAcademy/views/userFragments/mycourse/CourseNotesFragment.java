@@ -1,16 +1,10 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,22 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.adapters.CourseNotesAdapter;
-import com.flaxeninfosoft.sarwateAcademy.adapters.CourseVideosAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.NonPurchasedNotesAdapter;
 import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
-import com.flaxeninfosoft.sarwateAcademy.api.Constants;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentBatchNotesBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.StudyMaterial;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
-import com.flaxeninfosoft.sarwateAcademy.models.Video;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -137,7 +132,6 @@ public class CourseNotesFragment extends Fragment {
         }
         DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
         manager.enqueue(request);
-
     }
 
     public String getExtension(String urlString) {

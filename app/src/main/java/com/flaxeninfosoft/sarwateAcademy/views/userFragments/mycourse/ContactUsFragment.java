@@ -1,19 +1,17 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentContactUsBinding;
@@ -59,7 +57,7 @@ public class ContactUsFragment extends Fragment {
         i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"sarwateacademy40@gmail.com"});
         try {
             startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
+        } catch (ActivityNotFoundException ex) {
             Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
     }

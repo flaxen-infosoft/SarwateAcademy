@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutNonpurchaseVideoBinding;
-import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleVideoBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Video;
 import com.squareup.picasso.Picasso;
 
@@ -19,23 +18,23 @@ import java.util.List;
 public class NonPurchasedVideoAdapter extends RecyclerView.Adapter<NonPurchasedVideoAdapter.VideoHolder> {
 
     private List<Video> videoList;
-    private NonPurchasedVideoAdapter.VideoCardClickListener videoCardClickListener;
+    private VideoCardClickListener videoCardClickListener;
 
 
-    public NonPurchasedVideoAdapter(List<Video> videoList, NonPurchasedVideoAdapter.VideoCardClickListener videoCardClickListener) {
+    public NonPurchasedVideoAdapter(List<Video> videoList, VideoCardClickListener videoCardClickListener) {
         this.videoList = videoList;
         this.videoCardClickListener = videoCardClickListener;
     }
 
     @NonNull
     @Override
-    public NonPurchasedVideoAdapter.VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutNonpurchaseVideoBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_nonpurchase_video, parent, false);
         return new VideoHolder(binding, videoCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NonPurchasedVideoAdapter.VideoHolder holder, int position) {
+    public void onBindViewHolder(@NonNull VideoHolder holder, int position) {
         holder.setData(videoList.get(position));
     }
 
@@ -51,9 +50,9 @@ public class NonPurchasedVideoAdapter extends RecyclerView.Adapter<NonPurchasedV
     public class VideoHolder extends RecyclerView.ViewHolder {
 
         LayoutNonpurchaseVideoBinding binding;
-        NonPurchasedVideoAdapter.VideoCardClickListener videoCardClickListener;
+        VideoCardClickListener videoCardClickListener;
 
-        public VideoHolder(LayoutNonpurchaseVideoBinding binding, NonPurchasedVideoAdapter.VideoCardClickListener videoCardClickListener) {
+        public VideoHolder(LayoutNonpurchaseVideoBinding binding, VideoCardClickListener videoCardClickListener) {
             super(binding.getRoot());
 
             this.binding = binding;

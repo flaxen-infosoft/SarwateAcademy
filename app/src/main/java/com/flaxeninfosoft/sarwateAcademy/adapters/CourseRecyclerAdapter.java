@@ -1,5 +1,6 @@
 package com.flaxeninfosoft.sarwateAcademy.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -44,6 +45,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
         return courseList.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void filterList(List<Course> courseList) {
         this.courseList = courseList;
         notifyDataSetChanged();

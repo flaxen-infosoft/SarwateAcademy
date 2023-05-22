@@ -26,13 +26,13 @@ public class CourseVideosAdapter extends RecyclerView.Adapter<CourseVideosAdapte
 
     @NonNull
     @Override
-    public CourseVideosAdapter.VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public VideoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleVideoBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_video,parent,false);
         return new VideoHolder(binding,videoCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseVideosAdapter.VideoHolder holder, int position) {
+    public void onBindViewHolder(@NonNull VideoHolder holder, int position) {
         holder.setData(videoList.get(position));
     }
 

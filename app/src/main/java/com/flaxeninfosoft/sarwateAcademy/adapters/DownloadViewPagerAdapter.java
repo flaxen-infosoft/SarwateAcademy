@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.flaxeninfosoft.sarwateAcademy.views.userFragments.DownloadedDocumentFragment;
-import com.flaxeninfosoft.sarwateAcademy.views.userFragments.DownloadedVideoFragment;
+import com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.DownloadedDocumentFragment;
+import com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.DownloadedVideoFragment;
 
 public class DownloadViewPagerAdapter extends FragmentPagerAdapter {
     public DownloadViewPagerAdapter(@NonNull FragmentManager fm) {

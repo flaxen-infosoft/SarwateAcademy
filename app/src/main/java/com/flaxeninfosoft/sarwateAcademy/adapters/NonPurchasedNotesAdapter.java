@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutNonpurchaseNotesBinding;
-import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleNotesBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.StudyMaterial;
 
 import java.util.List;
@@ -19,22 +18,22 @@ public class NonPurchasedNotesAdapter extends RecyclerView.Adapter<NonPurchasedN
 
 
     private List<StudyMaterial> studyMaterialList;
-    private NonPurchasedNotesAdapter.NotesCardClickListener notesCardClickListener;
+    private NotesCardClickListener notesCardClickListener;
 
-    public NonPurchasedNotesAdapter(List<StudyMaterial> studyMaterialList, NonPurchasedNotesAdapter.NotesCardClickListener notesCardClickListener) {
+    public NonPurchasedNotesAdapter(List<StudyMaterial> studyMaterialList, NotesCardClickListener notesCardClickListener) {
         this.studyMaterialList = studyMaterialList;
         this.notesCardClickListener = notesCardClickListener;
     }
 
     @NonNull
     @Override
-    public NonPurchasedNotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutNonpurchaseNotesBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_nonpurchase_notes, parent, false);
         return new ViewHolder(binding, notesCardClickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NonPurchasedNotesAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(studyMaterialList.get(position));
     }
 
@@ -50,9 +49,9 @@ public class NonPurchasedNotesAdapter extends RecyclerView.Adapter<NonPurchasedN
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private LayoutNonpurchaseNotesBinding binding;
-        private NonPurchasedNotesAdapter.NotesCardClickListener notesCardClickListener;
+        private NotesCardClickListener notesCardClickListener;
 
-        public ViewHolder(LayoutNonpurchaseNotesBinding binding, NonPurchasedNotesAdapter.NotesCardClickListener notesCardClickListener) {
+        public ViewHolder(LayoutNonpurchaseNotesBinding binding, NotesCardClickListener notesCardClickListener) {
             super(binding.getRoot());
             this.binding = binding;
             this.notesCardClickListener = notesCardClickListener;

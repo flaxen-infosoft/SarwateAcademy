@@ -1,18 +1,16 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.flaxeninfosoft.sarwateAcademy.R;
-
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentBatchDescriptionBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.squareup.picasso.Picasso;

@@ -165,7 +165,7 @@
         android:id="@+id/myCoursePurchasedHomeFragment"
         android:name="com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse.MyCoursePurchasedHomeFragment"
         android:label="fragment_my_course_purchased_home"
-        tools:layout="@layout/fragment_my_course_purchased_home" >
+        tools:layout="@layout/fragment_my_course_purchased_home">
         <action
             android:id="@+id/action_myCoursePurchasedHomeFragment_to_notesFragment"
             app:destination="@id/notesFragment"

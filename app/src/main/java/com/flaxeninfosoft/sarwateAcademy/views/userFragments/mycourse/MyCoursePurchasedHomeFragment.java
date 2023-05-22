@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.adapters.MyCourseViewPagerAdapter;
-import com.flaxeninfosoft.sarwateAcademy.adapters.SingleBatchViewPagerAdapter;
-import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentBatchHomeBinding;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyCoursePurchasedHomeBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 

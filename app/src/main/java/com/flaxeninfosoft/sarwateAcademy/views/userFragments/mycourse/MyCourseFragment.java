@@ -1,19 +1,18 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -22,8 +21,6 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.flaxeninfosoft.sarwateAcademy.R;
 import com.flaxeninfosoft.sarwateAcademy.adapters.MyCourseRecyclerAdapter;
-import com.flaxeninfosoft.sarwateAcademy.api.ApiEndpoints;
-import com.flaxeninfosoft.sarwateAcademy.api.Constants;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentMyCourseBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
@@ -120,7 +117,6 @@ public class MyCourseFragment extends Fragment {
                             Course course = gson.fromJson(jsonArray.getJSONObject(i).toString(), Course.class);
                             Log.i(TAG, "" + course.getCourseId());
                             courseList.add(course);
-
                         }
 
                         if (courseList.size() == 0) {

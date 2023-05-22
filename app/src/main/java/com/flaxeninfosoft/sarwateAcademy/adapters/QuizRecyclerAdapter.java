@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleBatchBinding;
-import com.flaxeninfosoft.sarwateAcademy.models.Course;
+import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleQuizBinding;
+import com.flaxeninfosoft.sarwateAcademy.models.Quiz;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -17,28 +17,27 @@ import java.util.List;
 public class QuizRecyclerAdapter extends RecyclerView.Adapter<QuizRecyclerAdapter.ViewHolder> {
 
 
-    private List<Course>  quizList;
+    private List<Quiz> quizList;
 
     private QuizCardClickListener quizCardClickListener;
 
-    private QuizRecyclerAdapter(List<Course> courseList,QuizCardClickListener quizCardClickListener){
-        this.quizList = courseList;
+    public QuizRecyclerAdapter(List<Quiz> quiuzList, QuizCardClickListener quizCardClickListener){
+        this.quizList = quiuzList;
         this.quizCardClickListener = quizCardClickListener;
     }
 
 
     @NonNull
     @Override
-    public QuizRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutSingleBatchBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),  R.layout.layout_single_batch, parent, false);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutSingleQuizBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),  R.layout.layout_single_quiz, parent, false);
         return new ViewHolder(binding,quizCardClickListener);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuizRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(quizList.get(position));
-
     }
 
     @Override
@@ -47,32 +46,31 @@ public class QuizRecyclerAdapter extends RecyclerView.Adapter<QuizRecyclerAdapte
             return 0;
         }
         return quizList.size();
-
     }
 
-    public void filterList(List<Course> quizList){
+    public void filterList(List<Quiz> quizList){
         this.quizList = quizList;
         notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final LayoutSingleBatchBinding binding;
+        private final LayoutSingleQuizBinding binding;
         private final QuizCardClickListener quizCardClickListener;
 
-        public ViewHolder(LayoutSingleBatchBinding binding, QuizCardClickListener quizCardClickListener) {
+        public ViewHolder(LayoutSingleQuizBinding binding, QuizCardClickListener quizCardClickListener) {
             super(binding.getRoot());
             this.binding=binding;
-            this.quizCardClickListener = quizCardClickListener;
+            this.quizCardClickListener= quizCardClickListener;
         }
 
-        public void setData(Course course) {
-            binding.setCourse(course);
-            Picasso.get().load("http://103.118.17.202/~mkeducation/MK_API/User/"+course.getImageUrl()).placeholder(R.drawable.sarwate_logo).into(binding.batchImageView);
-            binding.getRoot().setOnClickListener(view->quizCardClickListener.onCLickCard(course));
+        public void setData(Quiz quiz) {
+            binding.setQuiz(quiz);
+            Picasso.get().load("http://103.118.17.202/~mkeducation/MK_API/User/"+quiz.getBanner()).placeholder(R.drawable.sarwate_logo).into(binding.batchImageView);
+            binding.getRoot().setOnClickListener(view->quizCardClickListener.onCLickCard(quiz));
         }
     }
     public interface QuizCardClickListener {
-        void onCLickCard(Course course);
+        void onCLickCard(Quiz quiz);
     }
 }

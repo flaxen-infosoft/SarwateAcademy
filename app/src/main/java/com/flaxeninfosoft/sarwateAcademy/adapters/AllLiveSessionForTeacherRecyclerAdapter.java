@@ -26,13 +26,13 @@ public class AllLiveSessionForTeacherRecyclerAdapter extends RecyclerView.Adapte
 
     @NonNull
     @Override
-    public AllLiveSessionForTeacherRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleBatchBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_batch, parent, false);
-        return new AllLiveSessionForTeacherRecyclerAdapter.ViewHolder(binding, clickListener);
+        return new ViewHolder(binding, clickListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AllLiveSessionForTeacherRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(courseList.get(position));
     }
 

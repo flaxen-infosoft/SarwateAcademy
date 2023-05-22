@@ -1,17 +1,15 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.adapters.CourseVideosAdapter;
 import com.flaxeninfosoft.sarwateAcademy.adapters.DownloadedVideosRecyclerAdapter;
 import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentDownloadedVideoBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.Video;

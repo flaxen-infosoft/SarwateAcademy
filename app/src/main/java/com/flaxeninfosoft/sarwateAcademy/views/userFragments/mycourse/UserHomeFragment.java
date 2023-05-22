@@ -1,4 +1,4 @@
-package com.flaxeninfosoft.sarwateAcademy.views.userFragments;
+package com.flaxeninfosoft.sarwateAcademy.views.userFragments.mycourse;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,8 +32,6 @@ import com.flaxeninfosoft.sarwateAcademy.databinding.FragmentUserHomeBinding;
 import com.flaxeninfosoft.sarwateAcademy.models.User;
 import com.flaxeninfosoft.sarwateAcademy.utils.SharedPrefs;
 import com.flaxeninfosoft.sarwateAcademy.views.AuthenticationActivity;
-import com.flaxeninfosoft.sarwateAcademy.views.UserActivity;
-import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 
 import org.json.JSONException;

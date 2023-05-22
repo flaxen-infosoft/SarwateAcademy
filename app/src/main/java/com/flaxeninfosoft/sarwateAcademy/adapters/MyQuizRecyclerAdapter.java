@@ -1,7 +1,6 @@
 package com.flaxeninfosoft.sarwateAcademy.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -9,9 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.flaxeninfosoft.sarwateAcademy.R;
-import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleBatchBinding;
 import com.flaxeninfosoft.sarwateAcademy.databinding.LayoutSingleMyquizBinding;
-import com.flaxeninfosoft.sarwateAcademy.models.Course;
 import com.flaxeninfosoft.sarwateAcademy.models.MyQuiz;
 import com.squareup.picasso.Picasso;
 
@@ -27,7 +24,7 @@ public class MyQuizRecyclerAdapter extends RecyclerView.Adapter<MyQuizRecyclerAd
     }
     @NonNull
     @Override
-    public MyQuizRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutSingleMyquizBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_single_myquiz, parent, false);
         return new ViewHolder(binding, myQuizCardClick);
     }

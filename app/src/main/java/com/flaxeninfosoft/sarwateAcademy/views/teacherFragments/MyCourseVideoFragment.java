@@ -1,8 +1,6 @@
 package com.flaxeninfosoft.sarwateAcademy.views.teacherFragments;
 
 import android.app.ProgressDialog;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -10,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

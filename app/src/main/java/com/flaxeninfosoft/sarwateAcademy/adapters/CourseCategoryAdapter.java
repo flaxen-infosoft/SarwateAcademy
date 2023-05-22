@@ -25,13 +25,13 @@ public class CourseCategoryAdapter extends RecyclerView.Adapter<CourseCategoryAd
 
     @NonNull
     @Override
-    public CourseCategoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutCourseCategoryBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.layout_course_category, parent, false);
         return new ViewHolder(binding, categoryCardListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CourseCategoryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setData(courseCategoryList.get(position));
     }
 
